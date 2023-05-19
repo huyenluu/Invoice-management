@@ -136,7 +136,6 @@ const InvoiceForm = ({
     setFormData(initialFormState);
   };
   const handleSaveData = async (e, invoiceStatus) => {
-    console.log(formData);
     e.preventDefault();
     const invoiceTotal = formData.items.reduce((total, current) => {
       return total + current.total;

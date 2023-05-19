@@ -107,7 +107,6 @@ export const addCollectionAndDocuments = async (
   });
 
   await batch.commit();
-  console.log("done");
 };
 
 const invoicesCollectionRef = collection(db, "invoices");

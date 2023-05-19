@@ -23,7 +23,6 @@ const StatusFilterDropdown = ({ title }) => {
       newArr = [...selectedStatuses, option];
       setSelectedStatuses(newArr);
     }
-    console.log(newArr);
     filterInvoicesByStatus(newArr);
   };
 

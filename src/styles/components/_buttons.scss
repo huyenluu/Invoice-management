@@ -1,0 +1,128 @@
+@import "variables.scss";
+
+.button-main {
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.25px;
+  display: flex;
+  align-items: center;
+  height: 4.8rem;
+  cursor: pointer;
+  justify-content: center;
+  border: none;
+}
+.button-1 {
+  background: #7c5dfa;
+  color: #ffffff;
+  padding-inline: 0.8rem 1.6rem;
+  gap: 1rem;
+  &::before {
+    content: "";
+    display: block;
+    background-image: url("../../assets/icon-plus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: $white;
+    border-radius: 50%;
+  }
+  &:hover {
+    background: #9277ff;
+  }
+}
+
+.button-2 {
+  background: #7c5dfa;
+  color: #ffffff;
+  padding-inline: 2.4rem;
+  &:hover {
+    background: #9277ff;
+  }
+}
+
+.button-3 {
+  background: #f9fafe;
+  color: #7e88c3;
+  padding-inline: 2.4rem;
+  &:hover {
+    background: #dfe3fa;
+  }
+}
+
+// .button-3-dk {
+//     background: #252945;
+//     color: #DFE3FA;
+//     padding-inline: 2.4rem;
+//     &:hover {
+//         background: #FFFFFF;
+//     }
+// }
+
+.button-4 {
+  background: #373b53;
+  color: #888eb0;
+  padding-inline: 2.4rem;
+  &:hover {
+    background: #0c0e16;
+  }
+}
+
+// .button-4-dk {
+//     background: #373B53;
+//     color: #DFE3FA;
+//     padding-inline: 2.4rem;
+//     &:hover {
+//         background: #1E2139;
+//     }
+// }
+
+.button-5 {
+  background: #ec5757;
+  color: #ffffff;
+  padding-inline: 2.4rem;
+  &:hover {
+    background: #ff9797;
+  }
+}
+
+.button-6 {
+  background: #f9fafe;
+  color: #7e88c3;
+  padding-inline: 0.8rem 1.6rem;
+  justify-content: center;
+  width: 100%;
+  &::before {
+    content: "";
+    display: block;
+    background-image: url("../../assets/icon-plus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0.8rem;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  &:hover {
+    background: #dfe3fa;
+  }
+}
+
+.dark-mode {
+  .button-3,
+  .button-6 {
+    background: #252945;
+    color: #dfe3fa;
+    &:hover {
+      background: #ffffff;
+    }
+  }
+  .button-4 {
+    background: #373b53;
+    color: #dfe3fa;
+    &:hover {
+      background: #1e2139;
+    }
+  }
+}

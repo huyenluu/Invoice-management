@@ -1,0 +1,77 @@
+@import "variables.scss";
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+The 62.5% Font Size Trick for easy REM calculation
+https://www.aleksandrhovhannisyan.com/blog/62-5-percent-font-size-trick/
+*/
+
+html {
+  font-size: 62.5%;
+  /* 62.5% of the base size of 16px = 10px.*/
+}
+
+body {
+  font-size: 1.6rem;
+  /* reset 10*1.6 = 16px, to make sure you do not get any 10px around */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* set up the body */
+body {
+  font-family: "League Spartan", sans-serif;
+  font-style: normal;
+  background-color: $light-bg-color;
+  min-height: 100vh;
+  font-size: $default-fs;
+  font-weight: $default-fw;
+}

@@ -1,0 +1,75 @@
+@import "variables.scss";
+
+.dark-mode {
+  background-color: $black-bg-color;
+  color: $white;
+  .white-card-container {
+    background-color: $navy;
+  }
+
+  .text-black {
+    color: $white;
+  }
+  .text-blue-medium {
+    color: $white;
+  }
+  .text-blue-dark {
+    color: $grey-blue-light;
+  }
+  .invoice-list-container {
+    border: 1px solid $navy;
+  }
+  .invoice-status {
+    &.grey {
+      .status-background {
+        background-color: $grey-blue-light;
+      }
+      .status-text {
+        color: $grey-blue-light;
+        .dot {
+          background-color: $grey-blue-light;
+        }
+      }
+    }
+  }
+  .filter-dropdown__options {
+    background-color: $navy;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    .custom-checkbox {
+      background: $navy-lighter;
+    }
+  }
+  .menu-bar-container {
+    background-color: $navy;
+    .menu-bar-description {
+      background-color: $navy-lighter;
+    }
+  }
+  .invoice-details-card {
+    color: $grey-blue-light;
+    .items-table {
+      background: $navy-lighter;
+    }
+    .items-table-totals {
+      background: $black;
+    }
+  }
+  .invoice-form-holder,
+  .form-footer-container {
+    background-color: $black-bg-color;
+  }
+  .form {
+    input,
+    select,
+    select option {
+      background: $navy;
+      border: 1px solid #252945;
+      color: $white;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .action-buttons-group {
+      background-color: $navy;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "invoice-app",
+  "version": "1",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "firebase": "^9.17.1",
+    "prettier": "2.8.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.62.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "test": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts test",
+    "eject": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "an app to manage invoice",
+  "main": "index.js",
+  "repository": "https://github.com/huyenluu/Invoice-app.git",
+  "author": "Huyen Luu <haihuyen.luu@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "resolve-url-loader": "^5.0.0"
+  }
+}

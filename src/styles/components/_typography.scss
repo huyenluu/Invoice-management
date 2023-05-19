@@ -1,0 +1,72 @@
+@import "./variables";
+
+.fs-32 {
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+  letter-spacing: -1px;
+}
+.fs-24 {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+}
+.fs-20 {
+  font-size: 2rem;
+  line-height: 2.2px;
+  letter-spacing: -0.625px;
+}
+.fs-18 {
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: -0.375px;
+}
+.fs-16 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: -0.8px;
+}
+.fs-15 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  letter-spacing: -0.8px;
+}
+.fs-12 {
+  font-size: 1.2rem;
+  line-height: 1.25;
+  letter-spacing: -0.25px;
+}
+.fs-11 {
+  font-size: 1.1rem;
+  line-height: 1.64;
+  letter-spacing: -0.229167px;
+}
+
+.text-black {
+  color: $black;
+}
+.text-blue-medium {
+  color: $grey-blue-medium;
+}
+.text-blue-dark {
+  color: $grey-blue-dark;
+}
+.text-purple {
+  color: $purple;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+.fw-medium {
+  font-weight: 500;
+}
+.text-light {
+  font-weight: 300;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}

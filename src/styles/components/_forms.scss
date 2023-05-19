@@ -1,0 +1,259 @@
+@import "./variables";
+
+.authentication-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 7.2rem auto;
+}
+
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  h2 {
+    margin: 10px 0;
+  }
+}
+
+.form {
+  label {
+    color: $grey-blue-medium;
+    margin-bottom: 1rem;
+  }
+  input,
+  select {
+    height: 4.8rem;
+    border: 1px solid #dfe3fa;
+    border-radius: 4px;
+    width: 100%;
+    padding-inline: 20px;
+    background-color: white;
+  }
+  select option {
+    font-weight: 700;
+    background-color: $white;
+    box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+    border-radius: 8px;
+    margin-top: 1.6rem;
+  }
+  input:focus,
+  select:focus {
+    border: 1px solid #9277ff;
+    outline: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+    color: #0c0e16;
+    background-color: white;
+  }
+  section {
+    margin-top: 4.8rem;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0;
+  }
+
+  .form-row {
+    margin-top: 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2.4rem;
+    width: 98%;
+    .form-group {
+      flex: 1;
+      label {
+        display: block;
+      }
+    }
+  }
+  table {
+    border-spacing: 1.6rem;
+    tbody td label {
+      display: none;
+    }
+    th {
+      color: $grey-blue-medium;
+      font-weight: 500;
+      text-align: left;
+      margin-bottom: 1.6rem;
+    }
+  }
+  .buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--gap, 1rem);
+    > button {
+      width: 50%;
+    }
+  }
+}
+
+.invoice-form-holder {
+  position: fixed;
+  left: calc(10.5rem - 2rem); /*menu bar width - border radius*/
+  top: 0px;
+  max-width: 71.9rem;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  z-index: 90;
+  padding: 5.6rem;
+  border-radius: 0px 2rem 2rem 0px;
+  background-color: $white;
+  .form-overlay {
+    position: fixed;
+    left: calc(10.5rem - 2rem); /*menu bar width - border radius*/
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .form-body-container {
+    height: calc(100vh - 11rem);
+    padding-bottom: 18rem;
+    overflow-y: scroll;
+
+    /* scrollbar */
+    /* Firefox */
+    scrollbar-width: 5px;
+    scrollbar-color: #dfe3fa;
+
+    /* scrollbar */
+    /* WebKit */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #dfe3fa;
+      height: 30px;
+    }
+  }
+  .form-footer-container {
+    position: fixed;
+    left: calc(10.5rem - 2rem); /*menu bar width - border radius*/
+    bottom: 0px;
+    height: 11rem;
+    width: 71.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $white;
+    border-radius: 0px 20px 20px 0px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+    padding-inline: 5.6rem;
+    .save-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+    .edit-form-buttons-group {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .invoice-form-holder,
+  .form-footer-container {
+    max-width: 75%;
+  }
+}
+@media screen and (max-width: 768px) {
+  $menuBarHeight: 8rem;
+  .authentication-container {
+    margin-top: 0;
+  }
+  .invoice-form-holder {
+    left: 0;
+    top: $menuBarHeight;
+    .form-footer-container {
+      left: 0;
+      border-radius: 0px 0px 0px 0px;
+    }
+    .form-overlay {
+      left: 0;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .authentication-container {
+    padding: 2.4rem;
+  }
+  .form {
+    .buttons-container {
+      flex-wrap: wrap;
+      button {
+        width: 100%;
+      }
+    }
+  }
+  .fs-24 {
+    font-size: 1.6rem;
+  }
+  .mt-32 {
+    margin-top: 1.6rem;
+  }
+  .invoice-form-holder {
+    max-width: 100%;
+    border-radius: unset;
+    padding: 2.4rem;
+    .form-row {
+      gap: 0.8rem;
+    }
+    .form-footer-container {
+      max-width: 100%;
+      height: 9.1rem;
+      padding-inline: 2.4rem;
+    }
+    section {
+      margin-top: 2.4rem;
+    }
+  }
+  .form section {
+    margin-top: 2.4rem;
+  }
+  .form table {
+    border-spacing: 0.8rem;
+    thead {
+      display: none;
+    }
+    tbody td label {
+      display: block;
+    }
+    tbody tr td:first-child {
+      width: 100%;
+      display: inline-block;
+      margin-bottom: 2.4rem;
+    }
+    tbody tr td:not(:first-child):not(:last-child) {
+      display: inline-block;
+      width: calc(30% - 0.8rem);
+      margin-right: 0.8rem;
+    }
+    .delete-icon-holder {
+      display: inline-flex;
+      width: 10%;
+      height: 4.8rem;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1.6rem;
+    }
+  }
+  .delete-modal {
+    max-width: 90%;
+  }
+}

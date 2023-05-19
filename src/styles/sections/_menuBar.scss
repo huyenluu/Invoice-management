@@ -1,0 +1,132 @@
+@import "../components/variables";
+
+.menu-bar-container {
+  height: 100vh;
+  width: $menuBarHeight;
+  position: fixed;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  z-index: 100;
+  background: #373b53;
+  border-radius: 0 2rem 2rem 0;
+  background-color: #373b53;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .menu-bar-logo {
+    width: $menuBarHeight;
+    height: $menuBarHeight;
+    background: #7c5dfa;
+    border-radius: 0 2rem 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > img {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  .menu-bar-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .menu-bar-icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.4rem;
+    position: relative;
+    cursor: pointer;
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+    .profile-pic {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 2rem;
+    }
+  }
+
+  .menu-bar-line {
+    width: 100%;
+    height: 1px;
+    background-color: #494e6e;
+  }
+
+  .menu-bar-description {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $light-bg-color;
+    padding: 5px 10px;
+    white-space: nowrap;
+    border-radius: 5px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .menu-bar-icon:hover .menu-bar-description {
+    opacity: 1;
+  }
+}
+
+//tablet and phone
+@media screen and (max-width: 768px) {
+  $menuBarHeight: 8rem;
+  .menu-bar-container {
+    width: 100%;
+    height: $menuBarHeight;
+    position: fixed;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    flex-direction: row;
+    border-radius: unset;
+    .menu-bar-logo {
+      width: $menuBarHeight;
+      height: $menuBarHeight;
+    }
+    .menu-bar-icon-container {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      .menu-bar-line {
+        height: $menuBarHeight;
+        width: 1px;
+        margin-right: 2.4rem;
+      }
+      .menu-bar-icon {
+        margin-right: 2.4rem;
+        margin-bottom: unset;
+        margin-top: unset;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 372px) {
+  $menuBarHeight: 7.2rem;
+  .menu-bar-container {
+    height: $menuBarHeight;
+    .menu-bar-logo {
+      width: $menuBarHeight;
+      height: $menuBarHeight;
+    }
+    .menu-bar-icon-container {
+      .menu-bar-line {
+        height: $menuBarHeight;
+      }
+    }
+  }
+}

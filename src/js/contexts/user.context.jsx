@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from "react";
+import {
+  onAuthStateChangedListener,
+  createUserDocumentFromAuth,
+} from '../utils/firebase/firebase.utils';
+
 
 // Create a new context for user data
 export const UserContext = React.createContext();
@@ -9,15 +14,27 @@ export const UserProvider = (props) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    function handleResize() {
+    const handleResize = () => {
       setScreenWidth(window.innerWidth);
-    }
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
     };
+
+    window.addEventListener('resize', handleResize);
+    
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
+  useEffect(() => {
+    const unsubscribe = onAuthStateChangedListener((user) => {
+      if (user) {
+        createUserDocumentFromAuth(user);
+      }
+      setCurrentUser(user);
+    });
+
+    return unsubscribe;
   }, []);
   const login = (userData) => {
     setCurrentUser(userData);
@@ -43,7 +60,7 @@ export const UserProvider = (props) => {
         setCurrentUser,
         login,
         logout,
-        screenWidth,
+        screenWidth
       }}
     >
       {props.children}

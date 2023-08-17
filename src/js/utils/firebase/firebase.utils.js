@@ -5,6 +5,8 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 import {
   getFirestore,
@@ -21,10 +23,10 @@ import {
 } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  databaseURL: process.env.REACT_APP_DATABASE_URL,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  authDomain: "invoices-app-database.firebaseapp.com",
+  projectId: "invoices-app-database",
+  databaseURL: "https://invoices-app-database-default-rtdb.europe-west1.firebasedatabase.app",
+  storageBucket: "invoices-app-database.appspot.com",
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_APP_ID,
 };
@@ -80,6 +82,10 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
   return await signInWithEmailAndPassword(auth, email, password);
 };
+export const signOutUser = async () => await signOut(auth);
+
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
 
 export const db = getFirestore(firebaseApp);
 export const getInvoices = async (userId) => {

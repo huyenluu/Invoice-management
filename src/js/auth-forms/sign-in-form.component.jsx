@@ -67,62 +67,70 @@ const SignInForm = () => {
   };
 
   return (
-    <>
-      <div className={`sign-up-container form ${openSignUp ? "sr-only" : ""}`}>
-        <h2>Authentication</h2>
-        <div className="text-blue-dark">
-          Sign in with your email and password
-        </div>
-        <form onSubmit={handleSubmit}>
-          <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="email">Email Address</label>
-              <input
-                type="Email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={handleChange}
-                required
-              />
-            </div>
+      <>
+          <div
+              className={`sign-up-container form ${
+                  openSignUp ? 'sr-only' : ''
+              }`}
+          >
+              <h2>Authentication</h2>
+              <div className="text-blue-dark">
+                  Sign in with your email and password
+              </div>
+              <form onSubmit={handleSubmit}>
+                  <div className="form-row">
+                      <div className="form-group">
+                          <label htmlFor="email">Email Address</label>
+                          <input
+                              type="Email"
+                              id="email"
+                              name="email"
+                              value={email}
+                              onChange={handleChange}
+                              required
+                          />
+                      </div>
+                  </div>
+                  <div className="form-row">
+                      <div className="form-group">
+                          <label htmlFor="password">Password</label>
+                          <input
+                              type="password"
+                              id="password"
+                              name="password"
+                              value={password}
+                              onChange={handleChange}
+                              required
+                          />
+                      </div>
+                  </div>
+                  <div className="buttons-container">
+                      <button
+                          className="button-main button-2 mt-32"
+                          type="submit"
+                      >
+                          Sign In
+                      </button>
+                      <button
+                          type="button"
+                          buttontype="google"
+                          onClick={signInWithGoogle}
+                          className="button-main button-2 mt-32"
+                      >
+                          Sign in with Google
+                      </button>
+                  </div>
+              </form>
+              <button
+                  className="button-main button-3 mt-32"
+                  onClick={toggleSignUpForm}
+              >
+                  Don't have an account ? Sign up here.
+              </button>
+              <div className="auth-note-text">For testing purpose - Email: test@gmail.com Password: 123456</div>
           </div>
-          <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={password}
-                onChange={handleChange}
-                required
-              />
-            </div>
-          </div>
-          <div className="buttons-container">
-            <button className="button-main button-2 mt-32" type="submit">
-              Sign In
-            </button>
-            <button
-              type="button"
-              buttontype="google"
-              onClick={signInWithGoogle}
-              className="button-main button-2 mt-32"
-            >
-              Sign in with Google
-            </button>
-          </div>
-        </form>
-        <button
-          className="button-main button-3 mt-32"
-          onClick={toggleSignUpForm}
-        >
-          Don't have an account ? Sign up here.
-        </button>
-      </div>
-      {openSignUp && <SignUpForm toggleSignUp={toggleSignUpForm} />}
-    </>
+          {openSignUp && <SignUpForm toggleSignUp={toggleSignUpForm} />}
+      </>
   );
 };
 

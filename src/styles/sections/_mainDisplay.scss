@@ -180,6 +180,13 @@
     justify-content: end;
   }
 }
+.auth-note-text {
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 4rem;
+  text-align: center;
+  color:$grey-blue-medium;
+}
 
 @media screen and (max-width: 992px) {
   .container {

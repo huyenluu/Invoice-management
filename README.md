@@ -4,6 +4,9 @@ Invoice Manager is a responsive web app built with React and Firebase. Effortles
 
 Demo link : https://papaya-naiad-036400.netlify.app
 
+test account : test@gmail.com
+password: 123456
+
 ## Available Scripts
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
